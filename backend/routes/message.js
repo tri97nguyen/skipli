@@ -10,6 +10,7 @@ messageRouter.route('/')
     })
     .post((req, res, next) => {
         console.log(`raw body data ${req.body} | json parsed body data ${JSON.stringify(req.body)}`)
+        
         res.send(JSON.stringify(req.body));
     })
 
