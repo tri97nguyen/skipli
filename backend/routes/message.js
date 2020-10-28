@@ -6,19 +6,21 @@ var db = firebase.firestore()
 
 messageRouter.route('/')
     .get((req, res, next) => {
-
         res.json({ message: "hello world" });
     })
     .post((req, res, next) => {
-
+        console.log(`raw body data ${req.body} | json parsed body data ${JSON.stringify(req.body)}`)
+        res.send(JSON.stringify(req.body));
     })
+
 // WRITE/READ INTO DATABASE
-// db.collection("phones").get().then(snapshot => {
-//     snapshot.forEach(doc => {
-//         console.log(doc.data());
-//     });
-// });
-// db.collection('phones').add({ number: "8609648456", nonce: "123" })
+db.collection("phones").get().then(snapshot => {
+    snapshot.forEach(doc => {
+        console.log(doc.data());
+        
+    });
+});
+db.collection('phones').add({ number: "8609648456", nonce: "123" })
 
 function createNewAccessCode() {
     var nonce;

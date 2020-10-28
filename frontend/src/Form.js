@@ -38,18 +38,21 @@ const Form = (props) => {
 }
 
 const handdleSubmit = (e) => {
-    e.preventDefault()
-    console.log(e);
-    // fetch("http://127.0.0.1:3000", {
-    //     method: 'POST',
-    //     headers: {
-    //         'Accept': 'application/json',
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({  })
-    // })
-    //     .then(res => res.json())
-    //     .then(data => console.log(data))
+    e.preventDefault();
+    console.log(e.target.phone.value);
+    console.log(e.target.nonce.value);
+    var phone = e.target.phone.value;
+    var nonce = e.target.nonce.value;
+    fetch("/api/message", {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ phone, nonce })
+    })
+        .then(res => res.json())
+        .then(data => console.log(`data come back ${JSON.stringify(data)}`))
 
 
 }

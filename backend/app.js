@@ -8,6 +8,11 @@ var firebase = require('firebase');
 // firebase setup
 var firebaseConfig = require('./config').firebaseConfig
 firebase.initializeApp(firebaseConfig);
+
+// twilio setup
+var twilio = require('twilio');
+
+// router setup
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var messageRouter = require('./routes/message');

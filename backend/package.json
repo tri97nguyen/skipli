@@ -13,7 +13,9 @@
     "firebase": "^7.24.0",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "ngrok": "^3.3.0",
+    "twilio": "^3.50.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
