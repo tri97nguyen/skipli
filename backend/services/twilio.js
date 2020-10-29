@@ -1,5 +1,5 @@
-var accountSid = "AC90cb7dd6ead959ae5a48904d6606156d";
-var authToken = "b95f26b17082dfcefd64a545473d34da";
+var accountSid = "account id in email"; // I attached accountSid in email
+var authToken = "authToken in email"; // I attached authToken in email
 
 
 var twilio = require('twilio');
@@ -12,5 +12,5 @@ exports.sendSMS = (textMessage, toNumber) => {
         body: textMessage,
         to: toNumber,  // Text this number
         from: '+18605306592' // From a valid Twilio number
-    }).then((message) => console.log(message.sid));  
+    }).then((message) => console.log(message.sid));
 }
